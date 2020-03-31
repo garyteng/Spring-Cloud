@@ -1,6 +1,6 @@
 # Spring-Cloud with MySQL
 
-##API
+## API
 ### HTTP Get Request to helloworld
 -   "/helloworld"
 <pre>
@@ -26,9 +26,9 @@ EX: curl -X DELETE "http://<"your_url">:8080/deleteUser/123456
 </pre>
 
 ### HTTP Get Request to print all user
-- "/printAllUSers"
+- "/printAllUsers"
 <pre>
-EX: curl -X GET "http://<"your_url">:8080/printAllUser
+EX: curl -X GET "http://<"your_url">:8080/printAllUsers
 </pre>
 
 
