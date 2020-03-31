@@ -4,6 +4,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.SQLException;
+
 
 @RestController
 public class JDBCController {
@@ -52,6 +54,28 @@ public class JDBCController {
                 ");";
         int rowsUpdated = jdbcTemplate.update(queryStr);
         return ("Rows updated: " + rowsUpdated);
+    }
+
+    @CrossOrigin
+    @DeleteMapping(value = "/deleteUser/{id}")
+    public String deleteUser(@PathVariable Long id) {
+        JdbcTemplate jdbcTemplate = JDBCConnector.getJdbcTemplate();
+        StringBuilder deleteStr = new StringBuilder();
+
+        try{
+            int affectedRow = jdbcTemplate.update("DELETE from user_info where user_id = ? ;", id);
+
+            System.out.println("Delete row: " + affectedRow + "\n");
+
+            if(affectedRow != 0){
+                return (String.format("%d is deleted\n", id));
+            }else{
+                return (String.format("%d is not found\n", id));
+            }
+
+        }catch(Exception ex){
+            return("MySQL Server down.");
+        }
     }
 
     @CrossOrigin
