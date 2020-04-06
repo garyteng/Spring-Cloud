@@ -1,34 +1,18 @@
 # Spring-Cloud with MySQL
 
-## API
-### HTTP Get Request to helloworld
--   "/helloworld"
-<pre>
-EX: curl -X GET "http://<"your_url">:8080/helloworld
-</pre>
+## Goal
+In this project, I use java Spring to crate some Rest API, and store the data in MySQL, and make both of them run on a single AWS t2.micro instance.
 
-### HTTP Post Request to add user
+This is a small program that can be used to store daily notes from different users, and query notes by searching specific words.
 
-- "/addUser" 
-    - Body: { "firstName":"XX","lastName":"XX","address":"XX","email":"XX" }
+For more detail, please take a look at [wiki page](https://github.com/garyteng/Spring-Cloud/wiki).
 
+## User API
+[Link](https://github.com/garyteng/Spring-Cloud/wiki/User-API)
 
-<pre>
-EX: curl -i -H "Content-Type: application/json"  \
-         -d "{ \"firstName\":\"WW\", \"lastName\":\"XX\", \"address\":\"YY\", \"email\":\"ZZ\" }" \
-         -X POST "http://<"your_url">:8080/addUser
-</pre>
+Use to Add, Delete and Print Users
 
-### HTTP Delete Request to delete user
-- "/deleteUser/{id}"
-<pre>
-EX: curl -X DELETE "http://<"your_url">:8080/deleteUser/123456
-</pre>
+## NoteBooks API
+[Link](https://github.com/garyteng/Spring-Cloud/wiki/NoteBooks-API)
 
-### HTTP Get Request to print all user
-- "/printAllUsers"
-<pre>
-EX: curl -X GET "http://<"your_url">:8080/printAllUsers
-</pre>
-
-
+Use to Add and Query Notes
