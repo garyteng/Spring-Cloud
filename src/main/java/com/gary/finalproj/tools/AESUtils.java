@@ -1,4 +1,4 @@
-package com.hinkmond.finalproj;
+package com.gary.finalproj.tools;
 
 import org.springframework.stereotype.Component;
 
@@ -14,7 +14,7 @@ import java.security.GeneralSecurityException;
 import java.util.Scanner;
 
 @Component("aesUtils")
-class AESUtils {
+public class AESUtils {
     private final static String AES = "AES";
     private final static String END_OF_FILE = "\\Z";
 
@@ -22,7 +22,7 @@ class AESUtils {
      * Encrypt a value and generate a keyfile.
      * If the keyfile is not found, then a new one will be created.
      */
-    String encrypt(String value, String keyFilePath) {
+    public String encrypt(String value, String keyFilePath) {
         byte[] encrypted = "Empty".getBytes();
         try {
             File keyFile = new File(keyFilePath);
@@ -48,7 +48,7 @@ class AESUtils {
     /**
      * Decrypt a value.
      */
-    String decrypt(String message, String keyFilePath) {
+    public String decrypt(String message, String keyFilePath) {
         byte[] decrypted = "Emtpy".getBytes();
         try {
             File keyFile = new File(keyFilePath);

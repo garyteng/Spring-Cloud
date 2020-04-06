@@ -1,4 +1,4 @@
-package com.hinkmond.finalproj;
+package com.gary.finalproj.tools;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -12,7 +12,7 @@ public class JDBCConnector {
         return jdbcTemplate;
     }
 
-    void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
         JDBCConnector.jdbcTemplate = jdbcTemplate;
         String queryTmp = "SHOW TABLES;";
         List<String> sqlResult = JDBCConnector.jdbcTemplate.queryForList(queryTmp, String.class);
