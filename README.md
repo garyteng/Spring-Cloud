@@ -1,9 +1,12 @@
 # Spring-Cloud with MySQL
 
 ## Goal
-In this project, I use java Spring to crate some Rest API, and store the data in MySQL, and make both of them run on a single AWS t2.micro instance.
 
-This is a small program that can be used to store daily notes from different users, and query notes by searching specific words.
+* Use java Spring to crate some Rest API
+* Interact with MySQL DataBase
+* Make both of them run on a single AWS t2.micro instance
+* Store daily notes from different users
+* Query notes by searching words.
 
 For more detail, please take a look at [wiki page](https://github.com/garyteng/Spring-Cloud/wiki).
 
